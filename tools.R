@@ -5,7 +5,7 @@ library(memoise)
 
 
 
-filename <- "efsa_ops_tri.vectors.gz"
+filename <- "efsa_ops_tri_vectors.gz"
 
 guess_n_cols <- function() {
                                         # if cols is not defined
@@ -74,7 +74,7 @@ if (! "vectors" %in% ls()) {
     mem_nodesOf <-  memoise(nodesOf)
     mem_make_graph <- memoise(make_graph)
 
-    vectors <- mem_read.vectors(gzfile(filename))
+    vectors <- mem_read.vectors(filename)
     top_x <- sort(row.names(vectors)[1:10000])
     cat("end openning vector file ...\n")
 }
